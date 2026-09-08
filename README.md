@@ -1,4 +1,5 @@
 📊 Server Capacity Planning & Peak Load Forecasting
+
 📌 Project Overview
 As server node traffic scales, preventing resource exhaustion is critical to maintaining high availability. This project establishes an automated capacity planning model using Apache Kafka load metrics to forecast CPU utilization across a distributed server cluster.
 
