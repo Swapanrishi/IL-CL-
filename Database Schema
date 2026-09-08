@@ -1,0 +1,22 @@
+CREATE TABLE Departments (
+    dept_id SERIAL PRIMARY KEY,
+    dept_name VARCHAR(100),
+    building_block VARCHAR(50)
+);
+
+CREATE TABLE Server_Nodes (
+    node_id SERIAL PRIMARY KEY,
+    ip_address VARCHAR(50),
+    max_cpu_cores INT,
+    total_memory_gb INT
+);
+
+CREATE TABLE Kafka_Load_Metrics (
+    log_id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMP,
+    dept_id INT REFERENCES Departments(dept_id),
+    node_id INT REFERENCES Server_Nodes(node_id),
+    active_users INT,
+    cpu_utilization_pct DECIMAL(5, 2),
+    memory_usage_gb DECIMAL(5, 2)
+);
